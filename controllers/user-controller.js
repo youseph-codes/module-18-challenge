@@ -1,2 +1,5 @@
-const { user } = require("../models");
+const { User } = require("../models");
 
+const USERcontroller = {
+    A
+}
