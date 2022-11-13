@@ -26,6 +26,14 @@ const THOUGHTcontroller = {
             return USER.findOneAndUpdate({ _id: params.userId }, { $push: { thoughts: _id } }, { new: true }
             );
         })
-        .then
-    }
-}
+        .then((dbUserData) => {
+            console.log(dbUserData);
+            if (!dbUserData) {
+                res.status(404).json({ message: "No user with this id." });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch((err) => res.json(err));
+    },
+};
