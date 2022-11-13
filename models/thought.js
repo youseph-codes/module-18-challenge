@@ -18,3 +18,7 @@ const thoughtSchema = new Schema({
 },
 id: false,
 });
+
+const THOUGHT = model("Thought", thoughtSchema);
+
+module.exports = THOUGHT;
