@@ -3,10 +3,10 @@ const {
     getUSERbyID,
     ALLusers,
     CREATEuser,
-    // UPDATEuser,
-    // DELETEuser,
+    UPDATEuser,
+    DELETEuser,
     ADDfriend,
-    // DELETEfriend,
+    DELETEfriend,
 } = require('../../controllers/user-controller');
 
 router.route('/').get(ALLthoughts).post(CREATEuser);
