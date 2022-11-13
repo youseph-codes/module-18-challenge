@@ -37,3 +37,5 @@ const THOUGHTcontroller = {
         .catch((err) => res.json(err));
     },
 };
+
+module.exports = THOUGHTcontroller;
