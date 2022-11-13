@@ -20,4 +20,12 @@ const THOUGHTcontroller = {
             res.sendStatus(400);
         });
     },
+
+    CREATEthought({ params, body }, res) {
+        THOUGHT.create(body).then(({ _id }) => {
+            return USER.findOneAndUpdate({ _id: params.userId }, { $push: { thoughts: _id } }, { new: true }
+            );
+        })
+        .then
+    }
 }
