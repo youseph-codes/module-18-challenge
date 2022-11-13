@@ -20,5 +20,12 @@ const userSchema = new Schema({
             ref: "Thought",
         },
     ],
-    
-})
+    friends: [this],
+},
+{
+    toJSON: {
+        virtuals: true,
+    },
+},
+);
+
