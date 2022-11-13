@@ -9,6 +9,15 @@ const THOUGHTcontroller = {
         .catch((err) => {
             console.log(err);
             res.status(400).json(err);
-        })
-    }
+        });
+    },
+
+    getTHOUGHTbyID({ params }, res) {
+        console.log(params);
+        THOUGHT.findOne({ _id: params.thoughtID }).select("-__v").sort({ _id: -1 }).then((dbUserData) => res.json(dbUserData))
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(400);
+        });
+    },
 }
